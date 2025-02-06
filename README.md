@@ -3,7 +3,7 @@ This repo is a fork from [concurrent_cilk](https://github.com/iu-parfunc/concurr
 
 A few has been made to ensure this artifact runs without error in a `ubuntu:16.04` based docker image. More details can be found in [ERRATA.md](./ERRATA.md).
 
-**Original Content below:**
+**Below is the original content of this README.**
 
 # Intel(R) Cilk(TM) Plus runtime library - Concurrent Cilk Runtime 
 
