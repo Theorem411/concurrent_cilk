@@ -50,20 +50,22 @@ Once you have the necessary prerequisites installed, you can use the
 following commands to create the library:
 
 %a.
-%edit the ./build_scripts/env_cilk file so that $CILK_ROOT points to your 
-%desired installation directory and $CILK_SRC to point to your current 
-%directory of this README. If you are the same directory as the readme,
-%the CILK_SRC will be automatically set. 
+edit the ./build_scripts/env_cilk file so that `$CILK_ROOT` points to your 
+desired installation directory and `$CILK_SRC` to point to your current 
+directory of this README. If you are the same directory as the readme,
+the `CILK_SRC` will be automatically set. 
 
 %b.
-%source the env_cilk script with: source . ./build_scripts/env_cilk
+source the env_cilk script with: `source ./build_scripts/env_cilk`
 
 %c.
-%compile libcilkrts with ./build_libcilk.sh
+compile libcilkrts with `./build_libcilk.sh`
 
 To perform a debug build, set the environment variable CCILK_DEBUG to 1:
+```bash
 $ export CCILK_DEBUG=1
 $ ./build_libcilk.sh
+```
 
 #
 #  2. USING:
@@ -73,23 +75,28 @@ The Intel(R) C++ Compiler will automatically try to bring in the
 Intel Cilk Plus runtime in any program that uses the relevant
 features.  GCC requires explicit linking of both the library and
 its dependencies (libpthread, libdl).  For example:
-
+```bash
 % gcc foo.c -lcilkrts -lpthread -ldl
 % clang -fcilkplus foo.c 
 % icc -lcilkrts -lpthread -ldl
+```
 
 The debug level for the Concurrent Cilk runtime can be chosen dynamically by setting
-the appropriate level with the CCILK_DEBUG environment variable. 
+the appropriate level with the `CCILK_DEBUG` environment variable. 
 
 The available debug levels are:
+```
 IVAR       1
 CILKIO     2
 CONCURRENT 4
 FRAME      8
+```
 
 For instance, to run the echoserver with CILK IO library debugging on:
+```bash
 $ export CCILK_DEBUG=2
 $ ./echoserver.exe
+```
 
 #
 #  3. DOXYGEN DOCUMENTATION:
@@ -98,7 +105,9 @@ $ ./echoserver.exe
 The library source has Doxygen markup.  Generate HTML documentation
 based on the markup by changing directory into runtime and running:
 
+```
 % doxygen doxygen.cfg
+```
 
 #
 #  4. QUESTIONS OR BUGS:
