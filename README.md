@@ -1,9 +1,28 @@
 # Concurrent Cilk Runtime - LazyD Fork
 This repo is a fork from [concurrent_cilk](https://github.com/iu-parfunc/concurrent_cilk.git).
 
-I build this artifact in a `ubuntu:16.04` based docker image. "This library requires compiler compatible with Cilk support..." In this case I used cilkplus branch of [clang](https://github.com/cilkplus/llvm). 
+I build this artifact in a `ubuntu:12.04` based docker image. "This library requires compiler compatible with Cilk support..." In this case I used cilkplus branch of [clang](https://github.com/cilkplus/llvm). 
 
 A few changes has been made to ensure this artifact runs without error in my Docker container. More details can be found in [ERRATA.md](./ERRATA.md).
+
+## Build `concurent_cilk/deps/libevent` using autoconf
+**requirement:**
++ `openssl`: 1.0.1
++ automake autoconf libtool m4 perl
+
+Run 
+```shell
+autoreconf -fi
+```
+
+This will generate `./configure`, which you can run with
+```shell
+./configure --enable-shared
+make -j$(nproc)
+make install
+```
+The shared libraries are built in `concurrent-cilk/deps/libevent/.libs`.
+
 
 **Below is the original content of this README.**
 
