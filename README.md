@@ -3,7 +3,7 @@ This repo is a fork from [concurrent_cilk](https://github.com/iu-parfunc/concurr
 
 I build this artifact in a `ubuntu:12.04` based docker image. "This library requires compiler compatible with Cilk support..." In this case I used cilkplus branch of [clang](https://github.com/cilkplus/llvm). 
 
-A few changes has been made to ensure this artifact runs without error in my Docker container. More details can be found in [ERRATA.md](./ERRATA.md).
+A few changes has been made to ensure this artifact runs without error in my Docker container. More details can be found in [ERRATA.md](./errata.md).
 
 ## Build `concurent_cilk/deps/libevent` using autoconf
 **requirement:**
